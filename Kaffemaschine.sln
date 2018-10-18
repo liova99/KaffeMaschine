@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaffemaschine", "Kaffemaschine\Kaffemaschine.csproj", "{B075EB30-F94C-42F0-87F9-55EF4A4F2DBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B075EB30-F94C-42F0-87F9-55EF4A4F2DBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B075EB30-F94C-42F0-87F9-55EF4A4F2DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B075EB30-F94C-42F0-87F9-55EF4A4F2DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B075EB30-F94C-42F0-87F9-55EF4A4F2DBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B38554D8-1C05-46EC-A879-C8E1777CD86D}
+	EndGlobalSection
+EndGlobal
