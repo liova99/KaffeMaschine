@@ -23,11 +23,34 @@ namespace Kaffemaschine
         public MainWindow()
         {
             InitializeComponent();
+            wMain.DataContext = machine;
         }
+
+        CoffeeMachine machine = new CoffeeMachine();
 
         private void btnCoffe_Click(object sender, RoutedEventArgs e)
         {
+            machine.SelectedDrink = CoffeeMachine.Drink.Kaffe;
+        }
 
+        private void btnKaba_Click(object sender, RoutedEventArgs e)
+        {
+            machine.SelectedDrink = CoffeeMachine.Drink.Kaba;
+        }
+
+        private void btnNotBeer_Click(object sender, RoutedEventArgs e)
+        {
+            machine.SelectedDrink = CoffeeMachine.Drink.NotBeer;
+        }
+
+        private void btnWasser_Click(object sender, RoutedEventArgs e)
+        {
+            machine.SelectedDrink = CoffeeMachine.Drink.Wasser;
+        }
+
+        private void btnMilch_Click(object sender, RoutedEventArgs e)
+        {
+            machine.SelectedDrink = CoffeeMachine.Drink.Milch;
         }
     }
 }
