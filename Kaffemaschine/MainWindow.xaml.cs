@@ -24,5 +24,10 @@ namespace Kaffemaschine
         {
             InitializeComponent();
         }
+
+        private void btnCoffe_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

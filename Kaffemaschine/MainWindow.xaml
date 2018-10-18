@@ -5,8 +5,69 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kaffemaschine"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="540.602" Width="913.735" FontSize="30" MinWidth="400" MinHeight="400">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Grid.Column="0" Source="C:\MyDocs\Projects\Kaffemaschine\img\2E.jpg"/>
+            <Image Grid.Row="0" Grid.Column="1" Source="C:\MyDocs\Projects\Kaffemaschine\img\1E.jpg" />
+            <Image Grid.Row="1" Grid.Column="0" Source="C:\MyDocs\Projects\Kaffemaschine\img\0.50E.jpg" />
+            <Image Grid.Row="1" Grid.Column="1" Source="C:\MyDocs\Projects\Kaffemaschine\img\0.20E.jpg" />
+            <Image Grid.Row="2" Grid.Column="0" Source="C:\MyDocs\Projects\Kaffemaschine\img\0.10E.png" />
+            <Image Grid.Row="2" Grid.Column="1" Source="C:\MyDocs\Projects\Kaffemaschine\img\0.05E.jpg" />
+            <Image Grid.Row="3" Grid.Column="0" Source="C:\MyDocs\Projects\Kaffemaschine\img\0.02E.jpg" />
+            <Image Grid.Row="3" Grid.Column="1" Source="C:\MyDocs\Projects\Kaffemaschine\img\0.01E.jpg" />
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Source="C:\MyDocs\Projects\Kaffemaschine\img\KaffeMaschine.jpg"/>
+
+
+
+        </Grid>
+
+
+        <Grid Grid.Column="2" Margin="0 0 10 0 ">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Button Content="Kaffe" Margin="0 5" Name="btnCoffe" Click="btnCoffe_Click"/>
+            <Button Content="Kaba" Grid.Row="1" Margin="0 5"/>
+            <Button Content="Bier" Grid.Row="2" Margin="0 5"/>
+            <Button Content="Wasser" Grid.Row="3" Margin="0 5"/>
+            <Button Content="Milch" Grid.Row="4" Margin="0 5" />
+
+        </Grid>
+
     </Grid>
 </Window>
