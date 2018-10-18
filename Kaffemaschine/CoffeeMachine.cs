@@ -20,6 +20,9 @@ namespace Kaffemaschine
             Milch
         };
 
+        
+
+
         public CoffeeMachine() //constructor (erstellt die Klasse)
         {
 
@@ -33,13 +36,14 @@ namespace Kaffemaschine
 
 
         private Drink selectedDrink;
-    
+            
 
         /// <summary>
         /// was gerade ausgewählt ist.
         /// </summary>
         public Drink SelectedDrink
         {
+           
             get => selectedDrink;
 
             set
@@ -49,7 +53,7 @@ namespace Kaffemaschine
             }
         }
 
-    private decimal _priceToPay;
+    private decimal priceToPay;
         /// <summary>
         /// Was der Kunde zahlen muss
         /// </summary>
@@ -58,11 +62,16 @@ namespace Kaffemaschine
         
 
         public decimal PriceToPay {
-            get => _priceToPay;
+            
+            get => priceToPay;
             set
             {
-
-                _priceToPay = value;
+                if(SelectedDrink == Drink.Kaba)
+                {
+                    priceToPay = 15;
+                }
+                
+                //priceToPay = value;
                 OnPropertyChanged("SelectedDrink");
             }
         }
