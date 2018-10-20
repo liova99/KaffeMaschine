@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+
 
 namespace Kaffemaschine
 {
@@ -20,13 +22,14 @@ namespace Kaffemaschine
             Milch
         };
 
-        
+       
 
 
         public CoffeeMachine() //constructor (erstellt die Klasse)
         {
 
         }
+
 
         public void BerrechneWas()
         {
@@ -35,7 +38,7 @@ namespace Kaffemaschine
 
 
 
-        private Drink selectedDrink;
+        private Drink _selectedDrink;
             
 
         /// <summary>
@@ -44,35 +47,53 @@ namespace Kaffemaschine
         public Drink SelectedDrink
         {
            
-            get => selectedDrink;
+            get =>  _selectedDrink ;
 
             set
             {
-                selectedDrink = value;
+                _selectedDrink = value;
                 OnPropertyChanged("SelectedDrink");
             }
         }
 
-    private decimal priceToPay;
+        public double KaffePrice = 2;
+        public double bata  { get; set; }
+
+
+        public double  getPrice(Drink drink)
+        {
+            switch (drink)
+            {
+                case Drink.Kaffe:
+                    return PriceToPay = 0.5;
+                case Drink.Kaba:
+                    return PriceToPay = 2;
+                case Drink.NotBeer:
+                    return PriceToPay = 3;
+                case Drink.Wasser:
+                    return PriceToPay = 1.33;
+                case Drink.Milch:
+                    return PriceToPay = 0.99;
+
+                default:
+                    return 0;
+            }
+        }
+
+
+
+
+        private double _priceToPay;
         /// <summary>
         /// Was der Kunde zahlen muss
         /// </summary>
-         
+        public double PriceToPay {
 
-        
-
-        public decimal PriceToPay {
-            
-            get => priceToPay;
+            get => _priceToPay;
             set
             {
-                if(SelectedDrink == Drink.Kaba)
-                {
-                    priceToPay = 15;
-                }
-                
-                //priceToPay = value;
-                OnPropertyChanged("SelectedDrink");
+                _priceToPay = value;
+                OnPropertyChanged("PriceToPay");
             }
         }
 
@@ -80,7 +101,7 @@ namespace Kaffemaschine
         /// <summary>
         /// Geld was der Kunde eingeworfen hat.
         /// </summary>
-        public decimal CustomerBalance { get; set; }
+        public decimal CustomerBalance { get ; set; }
 
 
 

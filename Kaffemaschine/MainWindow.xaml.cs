@@ -28,29 +28,44 @@ namespace Kaffemaschine
 
         CoffeeMachine machine = new CoffeeMachine();
 
+        
+        
+
         private void btnCoffe_Click(object sender, RoutedEventArgs e)
         {
             machine.SelectedDrink = CoffeeMachine.Drink.Kaffe;
+            machine.getPrice(CoffeeMachine.Drink.Kaffe);
+            machine.PriceToPay = machine.PriceToPay;
+
         }
 
         private void btnKaba_Click(object sender, RoutedEventArgs e)
         {
             machine.SelectedDrink = CoffeeMachine.Drink.Kaba;
+            machine.getPrice(CoffeeMachine.Drink.Kaba);
+            machine.PriceToPay = machine.PriceToPay;
+
         }
 
         private void btnNotBeer_Click(object sender, RoutedEventArgs e)
         {
             machine.SelectedDrink = CoffeeMachine.Drink.NotBeer;
+            machine.getPrice(CoffeeMachine.Drink.NotBeer);
+            machine.PriceToPay = machine.PriceToPay;
         }
 
         private void btnWasser_Click(object sender, RoutedEventArgs e)
         {
             machine.SelectedDrink = CoffeeMachine.Drink.Wasser;
+            machine.getPrice(CoffeeMachine.Drink.Wasser);
+            machine.PriceToPay = machine.PriceToPay;
         }
 
         private void btnMilch_Click(object sender, RoutedEventArgs e)
         {
             machine.SelectedDrink = CoffeeMachine.Drink.Milch;
+            machine.getPrice(CoffeeMachine.Drink.Milch);
+            machine.PriceToPay = machine.PriceToPay;
         }
     }
 }

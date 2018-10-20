@@ -4,6 +4,19 @@
              xmlns:local="clr-namespace:Kaffemaschine"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="5 5" />
+            <Setter Property="Background" Value="#CCCCCC" />
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+        </Style>
+
+        <Style x:Key="Label" TargetType="Label" >
+
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontWeight" Value="400"/>
+
+
+        </Style>
     </Application.Resources>
 </Application>
