@@ -29,16 +29,19 @@
                 <RowDefinition/>
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource ButtonStyle}">
-                <Image  Source="C:\MyDocs\Projects\Kaffemaschine\img\2E.jpg"/>
+            <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource ButtonStyle}" x:Name="ZweiE" Click="ZweiE_Click"  >
+                <Image  Source="C:\MyDocs\Projects\Kaffemaschine\img\2Ε.png"/>
             </Button>
             <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource ButtonStyle}">
-                <Image  Source="C:\MyDocs\Projects\Kaffemaschine\img\1E.jpg" />
+                <Image  Source="C:\MyDocs\Projects\Kaffemaschine\img\1Ε.png" />
             </Button>
             <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource ButtonStyle}">
                 <Image  Source="C:\MyDocs\Projects\Kaffemaschine\img\0.50E.png" />
             </Button>
-                <Image Grid.Row="1" Grid.Column="1" Source="C:\MyDocs\Projects\Kaffemaschine\img\0.20E.jpg" />
+            <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource ButtonStyle}">
+                <Image  Source="C:\MyDocs\Projects\Kaffemaschine\img\0.20Ε.png" />
+            </Button>
+            
             <Image Grid.Row="2" Grid.Column="0" Source="C:\MyDocs\Projects\Kaffemaschine\img\0.10E.png" />
             <Image Grid.Row="2" Grid.Column="1" Source="C:\MyDocs\Projects\Kaffemaschine\img\0.05E.jpg" />
             <Image Grid.Row="3" Grid.Column="0" Source="C:\MyDocs\Projects\Kaffemaschine\img\0.02E.jpg" />
@@ -51,8 +54,23 @@
                 <RowDefinition Height="5*"/>
 
             </Grid.RowDefinitions>
-            <Label Style="{StaticResource Label}" Grid.Row="0" Content="{Binding Path=SelectedDrink, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Style="{StaticResource Label}" Grid.Row="0" Grid.Column="0" Content="{Binding Path=SelectedDrink, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Style="{StaticResource Label}" Grid.Row="0" Grid.Column="1" x:Name="priceLbl" Content="{Binding Path=PriceToPay, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="{}{0:N}€" />
+                <Label Style="{StaticResource Label}" Grid.Row="1" Grid.Column="0" Content="Balance: "/>
+                <Label Style="{StaticResource Label}" Grid.Row="1" Grid.Column="1" Content="{Binding Path=CustomerBalance, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="{}{0:N}€" />
+            </Grid>
+            
             <Image Grid.Row="1" Source="C:\MyDocs\Projects\Kaffemaschine\img\KaffeMaschine.jpg"/>
+            
 
 
 
@@ -79,8 +97,8 @@
                     <ColumnDefinition />
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <Label Style="{StaticResource Label}" Content="Price : " Grid.Row="5" Grid.Column="0" />
-                <Label Style="{StaticResource Label}" Grid.Row="5" Grid.Column="1" x:Name="priceLbl" Content="{Binding Path=PriceToPay, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="{}{0:N}€" />
+                <!--<Label Style="{StaticResource Label}" Content="Price : " Grid.Row="5" Grid.Column="0" />-->
+                
 
             </Grid>
 

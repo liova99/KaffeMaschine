@@ -34,38 +34,39 @@ namespace Kaffemaschine
         private void btnCoffe_Click(object sender, RoutedEventArgs e)
         {
             machine.SelectedDrink = CoffeeMachine.Drink.Kaffe;
-            machine.getPrice(CoffeeMachine.Drink.Kaffe);
-            machine.PriceToPay = machine.PriceToPay;
+            machine.GetPrice(CoffeeMachine.Drink.Kaffe);
 
         }
 
         private void btnKaba_Click(object sender, RoutedEventArgs e)
         {
             machine.SelectedDrink = CoffeeMachine.Drink.Kaba;
-            machine.getPrice(CoffeeMachine.Drink.Kaba);
-            machine.PriceToPay = machine.PriceToPay;
+            machine.GetPrice(CoffeeMachine.Drink.Kaba);
 
         }
 
         private void btnNotBeer_Click(object sender, RoutedEventArgs e)
         {
             machine.SelectedDrink = CoffeeMachine.Drink.NotBeer;
-            machine.getPrice(CoffeeMachine.Drink.NotBeer);
-            machine.PriceToPay = machine.PriceToPay;
+            machine.GetPrice(CoffeeMachine.Drink.NotBeer);
         }
 
         private void btnWasser_Click(object sender, RoutedEventArgs e)
         {
             machine.SelectedDrink = CoffeeMachine.Drink.Wasser;
-            machine.getPrice(CoffeeMachine.Drink.Wasser);
-            machine.PriceToPay = machine.PriceToPay;
+            machine.GetPrice(CoffeeMachine.Drink.Wasser);
         }
 
         private void btnMilch_Click(object sender, RoutedEventArgs e)
         {
             machine.SelectedDrink = CoffeeMachine.Drink.Milch;
-            machine.getPrice(CoffeeMachine.Drink.Milch);
-            machine.PriceToPay = machine.PriceToPay;
+            machine.GetPrice(CoffeeMachine.Drink.Milch);
+        }
+
+        private void ZweiE_Click(object sender, RoutedEventArgs e)
+        {
+            machine.MoneyInserted(2);
+            machine.CustomerBalance =  machine.GetCustomerBalance();
         }
     }
 }

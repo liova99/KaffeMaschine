@@ -30,13 +30,36 @@ namespace Kaffemaschine
 
         }
 
+        public enum DropedCoin
+        {
+            None,
+            zweiEuro,
+            EinsEuro,
+            funfzigCent,
+            
 
-        public void BerrechneWas()
+
+
+
+        };
+
+
+        /// <summary>
+        /// Returns Costumer Balance + inserted Money
+        /// </summary>
+        public double GetCustomerBalance()
         {
 
+            return CustomerBalance = _customerBalance + _moneyInserted;
         }
 
+        private double _moneyInserted;
 
+        public double MoneyInserted(double coint)
+        {
+            _moneyInserted = coint;
+            return _moneyInserted;
+        }
 
         private Drink _selectedDrink;
             
@@ -56,11 +79,12 @@ namespace Kaffemaschine
             }
         }
 
-        public double KaffePrice = 2;
-        public double bata  { get; set; }
 
 
-        public double  getPrice(Drink drink)
+        /// <summary>
+        /// Returns The Price of a selectet drink
+        /// </summary>
+        public double  GetPrice(Drink drink)
         {
             switch (drink)
             {
@@ -97,11 +121,20 @@ namespace Kaffemaschine
             }
         }
 
-
+        private double _customerBalance;
         /// <summary>
         /// Geld was der Kunde eingeworfen hat.
         /// </summary>
-        public decimal CustomerBalance { get ; set; }
+        public double CustomerBalance
+        {
+            get => _customerBalance;
+
+            set
+            {
+                _customerBalance = value;
+                OnPropertyChanged("CustomerBalance");
+            }
+        }
 
 
 
