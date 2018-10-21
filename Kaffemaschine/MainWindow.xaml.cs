@@ -63,10 +63,63 @@ namespace Kaffemaschine
             machine.GetPrice(CoffeeMachine.Drink.Milch);
         }
 
-        private void ZweiE_Click(object sender, RoutedEventArgs e)
+        private void twoEuro_Click(object sender, RoutedEventArgs e)
         {
             machine.MoneyInserted(2);
             machine.CustomerBalance =  machine.GetCustomerBalance();
+        }
+
+        private void oneEuro_Click(object sender, RoutedEventArgs e)
+        {
+            machine.MoneyInserted(1);
+            machine.CustomerBalance = machine.GetCustomerBalance();
+        }
+
+        private void fiftyCent_Click(object sender, RoutedEventArgs e)
+        {
+            machine.MoneyInserted(0.5);
+            machine.CustomerBalance = machine.GetCustomerBalance();
+        }
+
+        private void twentyCent_Click(object sender, RoutedEventArgs e)
+        {
+            machine.MoneyInserted(0.2);
+            machine.CustomerBalance = machine.GetCustomerBalance();
+        }
+
+
+        private void tenCent_Click(object sender, RoutedEventArgs e)
+        {
+            machine.MoneyInserted(0.1);
+            machine.CustomerBalance = machine.GetCustomerBalance();
+        }
+
+        private void fiveCent_Click(object sender, RoutedEventArgs e)
+        {
+            machine.MoneyInserted(0.05);
+            machine.CustomerBalance = machine.GetCustomerBalance();
+        }
+
+        private void twoCent_Click(object sender, RoutedEventArgs e)
+        {
+            machine.MoneyInserted(0.02);
+            machine.CustomerBalance = machine.GetCustomerBalance();
+        }
+
+        private void oneCent_Click(object sender, RoutedEventArgs e)
+        {
+            machine.MoneyInserted(0.01);
+            machine.CustomerBalance = machine.GetCustomerBalance();
+        }
+
+        private void returnMoney_Click(object sender, RoutedEventArgs e)
+        {
+            machine.ReturnMoney();
+        }
+
+        private void btnBuy_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
