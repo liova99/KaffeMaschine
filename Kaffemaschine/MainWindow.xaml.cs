@@ -33,33 +33,33 @@ namespace Kaffemaschine
 
         private void btnCoffe_Click(object sender, RoutedEventArgs e)
         {
-            machine.SelectedDrink = CoffeeMachine.Drink.Kaffe;
+            machine.SelectedDrink = nameof(CoffeeMachine.Drink.Kaffe);
             machine.GetPrice(CoffeeMachine.Drink.Kaffe);
 
         }
 
         private void btnKaba_Click(object sender, RoutedEventArgs e)
         {
-            machine.SelectedDrink = CoffeeMachine.Drink.Kaba;
+            machine.SelectedDrink = nameof(CoffeeMachine.Drink.Kaba);
             machine.GetPrice(CoffeeMachine.Drink.Kaba);
 
         }
 
         private void btnNotBeer_Click(object sender, RoutedEventArgs e)
         {
-            machine.SelectedDrink = CoffeeMachine.Drink.NotBeer;
+            machine.SelectedDrink = "Not a Beer";
             machine.GetPrice(CoffeeMachine.Drink.NotBeer);
         }
 
         private void btnWasser_Click(object sender, RoutedEventArgs e)
         {
-            machine.SelectedDrink = CoffeeMachine.Drink.Wasser;
+            machine.SelectedDrink = nameof(CoffeeMachine.Drink.Wasser);
             machine.GetPrice(CoffeeMachine.Drink.Wasser);
         }
 
         private void btnMilch_Click(object sender, RoutedEventArgs e)
         {
-            machine.SelectedDrink = CoffeeMachine.Drink.Milch;
+            machine.SelectedDrink = nameof(CoffeeMachine.Drink.Milch);
             machine.GetPrice(CoffeeMachine.Drink.Milch);
         }
 

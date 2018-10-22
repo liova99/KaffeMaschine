@@ -84,54 +84,54 @@ namespace Kaffemaschine
             {
 
 
-            if (moneyToBeReturned >= 2)
-            {
-                moneyToBeReturned -= 2;
-                twoEuro += 1;
-               // GiveChange();
-            }
-            else if(moneyToBeReturned >= 1)
-            {
-                moneyToBeReturned -= 1;
-                oneEuro += 1;
-              //  GiveChange();
-            }
-            else if (moneyToBeReturned >= 0.5m)
-            {
-                moneyToBeReturned -= 0.5m;
-                fiftycent += 1;
-             //   GiveChange();
-            }
-            else if (moneyToBeReturned >= 0.2m)
-            {
-                moneyToBeReturned -= 0.2m;
-                twentyCent += 1;
-             //   GiveChange();
-            }
-            else if (moneyToBeReturned >= 0.1m)
-            {
-                moneyToBeReturned -= 0.1m;
-                tenCent += 1;
-             //   GiveChange();
-            }
-            else if (moneyToBeReturned >= 0.05m)
-            {
-                moneyToBeReturned -= 0.05m;
-                fiveCent += 1;
-            //    GiveChange();
-            }
-            else if (moneyToBeReturned >= 0.02m)
-            {
-                moneyToBeReturned -= 0.02m;
-                twoCent += 1;
-             //   GiveChange();
-            }
-            else if (moneyToBeReturned >= 0.01m)
-            {
-                moneyToBeReturned -= 0.01m;
-                oneCent += 1;
-            //    GiveChange();
-            }
+                if (moneyToBeReturned >= 2)
+                {
+                    moneyToBeReturned -= 2;
+                    twoEuro += 1;
+                   // GiveChange();
+                }
+                else if(moneyToBeReturned >= 1)
+                {
+                    moneyToBeReturned -= 1;
+                    oneEuro += 1;
+                  //  GiveChange();
+                }
+                else if (moneyToBeReturned >= 0.5m)
+                {
+                    moneyToBeReturned -= 0.5m;
+                    fiftycent += 1;
+                 //   GiveChange();
+                }
+                else if (moneyToBeReturned >= 0.2m)
+                {
+                    moneyToBeReturned -= 0.2m;
+                    twentyCent += 1;
+                 //   GiveChange();
+                }
+                else if (moneyToBeReturned >= 0.1m)
+                {
+                    moneyToBeReturned -= 0.1m;
+                    tenCent += 1;
+                 //   GiveChange();
+                }
+                else if (moneyToBeReturned >= 0.05m)
+                {
+                    moneyToBeReturned -= 0.05m;
+                    fiveCent += 1;
+                //    GiveChange();
+                }
+                else if (moneyToBeReturned >= 0.02m)
+                {
+                    moneyToBeReturned -= 0.02m;
+                    twoCent += 1;
+                 //   GiveChange();
+                }
+                else if (moneyToBeReturned >= 0.01m)
+                {
+                    moneyToBeReturned -= 0.01m;
+                    oneCent += 1;
+                //    GiveChange();
+                }
 
             } 
 
@@ -217,11 +217,11 @@ namespace Kaffemaschine
         }
 
 
-        private Drink _selectedDrink;
+        private string _selectedDrink;
         /// <summary>
         /// was gerade ausgewählt ist.
         /// </summary>
-        public Drink SelectedDrink
+        public string SelectedDrink
         {
            
             get =>  _selectedDrink ;
