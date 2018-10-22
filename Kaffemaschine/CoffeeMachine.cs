@@ -161,6 +161,27 @@ namespace Kaffemaschine
             return CointsToBeReturned = yourCoints;
         }
 
+        /// <summary>
+        /// Show or not to show the cup
+        ///Wenn you buy a Coffe, a cup will be show
+        /// </summary>
+        public void  ShowTheCup(bool showOrNot)
+        {
+            ShowCup = showOrNot;
+        }
+
+        private bool _showCup = false;
+
+        public bool ShowCup
+        {
+            get => _showCup;
+
+            set
+            {
+                _showCup= value;
+                OnPropertyChanged("ShowCup");
+            }
+        }
 
         private decimal _moneyToBeReturned;
 

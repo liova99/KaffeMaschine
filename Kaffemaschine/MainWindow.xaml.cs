@@ -121,8 +121,13 @@ namespace Kaffemaschine
         {
             if (machine.CustomerBalance >= machine.PriceToPay)
             {
+                machine.ShowTheCup(true);
+                MessageBox.Show("Wait for it");
                 machine.GiveChange();
+                System.Threading.Thread.Sleep(2000);
+                machine.ShowTheCup(false);
                 MessageBox.Show(machine.CointsToBeReturned);
+
             }
             else
             {

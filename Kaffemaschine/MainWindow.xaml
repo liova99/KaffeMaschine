@@ -6,6 +6,12 @@
         xmlns:local="clr-namespace:Kaffemaschine"
         mc:Ignorable="d"
         Title="MainWindow" x:Name="wMain" Height="540.602" Width="913.735"  MinWidth="400" MinHeight="400">
+    
+        <!--Show or not the Cup -->
+        <Window.Resources>
+            <BooleanToVisibilityConverter x:Key="Converter" />
+        </Window.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -116,6 +122,7 @@
             </Grid>
             
             <Image Grid.Row="1" Source="C:\MyDocs\Projects\Kaffemaschine\img\KaffeMaschine.jpg"/>
+            <Image Grid.Row="1" Source="C:\MyDocs\Projects\Kaffemaschine\img\KaffeMaschineMitCup.jpg" Visibility="{Binding Path=ShowCup, Converter={StaticResource Converter}, UpdateSourceTrigger=PropertyChanged}" />
 
             <Label Style="{StaticResource Label}" Grid.Row="2" Content="{Binding MoneyToBeReturned, UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="{}Your Change {0:N}€"  />
 
