@@ -77,38 +77,38 @@ namespace Kaffemaschine
 
         private void fiftyCent_Click(object sender, RoutedEventArgs e)
         {
-            machine.MoneyInserted(0.5);
+            machine.MoneyInserted(0.5m);
             machine.CustomerBalance = machine.GetCustomerBalance();
         }
 
         private void twentyCent_Click(object sender, RoutedEventArgs e)
         {
-            machine.MoneyInserted(0.2);
+            machine.MoneyInserted(0.2m);
             machine.CustomerBalance = machine.GetCustomerBalance();
         }
 
 
         private void tenCent_Click(object sender, RoutedEventArgs e)
         {
-            machine.MoneyInserted(0.1);
+            machine.MoneyInserted(0.1m);
             machine.CustomerBalance = machine.GetCustomerBalance();
         }
 
         private void fiveCent_Click(object sender, RoutedEventArgs e)
         {
-            machine.MoneyInserted(0.05);
+            machine.MoneyInserted(0.05m);
             machine.CustomerBalance = machine.GetCustomerBalance();
         }
 
         private void twoCent_Click(object sender, RoutedEventArgs e)
         {
-            machine.MoneyInserted(0.02);
+            machine.MoneyInserted(0.02m);
             machine.CustomerBalance = machine.GetCustomerBalance();
         }
 
         private void oneCent_Click(object sender, RoutedEventArgs e)
         {
-            machine.MoneyInserted(0.01);
+            machine.MoneyInserted(0.01m);
             machine.CustomerBalance = machine.GetCustomerBalance();
         }
 
@@ -119,7 +119,16 @@ namespace Kaffemaschine
 
         private void btnBuy_Click(object sender, RoutedEventArgs e)
         {
+            if (machine.CustomerBalance >= machine.PriceToPay)
+            {
+                machine.GiveChange();
+                MessageBox.Show(machine.CointsToBeReturned);
+            }
+            else
+            {
+                MessageBox.Show(String.Format("You need {0}€ more Dude! ", machine.PriceToPay - machine.CustomerBalance));
 
+            }
         }
     }
 }

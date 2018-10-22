@@ -32,9 +32,9 @@ namespace Kaffemaschine
         /// <summary>
         /// Returns Costumer Balance + inserted Money
         /// </summary>
-        public double  GetCustomerBalance()
+        public decimal  GetCustomerBalance()
         {
-            double balance = _customerBalance + _moneyInserted;
+            decimal balance = _customerBalance + _moneyInserted;
             if (balance <= 4)
             {
                 return balance;
@@ -50,7 +50,7 @@ namespace Kaffemaschine
         /// <summary>
         /// returns all the money inserted
         /// </summary>
-        public double ReturnMoney()
+        public decimal ReturnMoney()
         {
             return CustomerBalance = 0;
         }
@@ -60,22 +60,116 @@ namespace Kaffemaschine
         /// like 
         /// </summary>
         /// <returns></returns>
-        public double GiveChange()
+        public string GiveChange()
         {
-            double moneyToBeReturned = _customerBalance - _priceToPay;
+            decimal moneyToBeReturned = _customerBalance - _priceToPay;
 
-            while(moneyToBeReturned != 0)
+            decimal twoEuro = 0;
+            decimal oneEuro = 0;
+            decimal fiftycent = 0;
+            decimal twentyCent = 0;
+            decimal tenCent = 0;
+            decimal fiveCent = 0;
+            decimal twoCent = 0;
+            decimal oneCent = 0;
+
+            while (moneyToBeReturned > 0)
             {
 
+
+            if (moneyToBeReturned >= 2)
+            {
+                moneyToBeReturned -= 2;
+                twoEuro += 1;
+               // GiveChange();
+            }
+            else if(moneyToBeReturned >= 1)
+            {
+                moneyToBeReturned -= 1;
+                oneEuro += 1;
+              //  GiveChange();
+            }
+            else if (moneyToBeReturned >= 0.5m)
+            {
+                moneyToBeReturned -= 0.5m;
+                fiftycent += 1;
+             //   GiveChange();
+            }
+            else if (moneyToBeReturned >= 0.2m)
+            {
+                moneyToBeReturned -= 0.2m;
+                twentyCent += 1;
+             //   GiveChange();
+            }
+            else if (moneyToBeReturned >= 0.1m)
+            {
+                moneyToBeReturned -= 0.1m;
+                tenCent += 1;
+             //   GiveChange();
+            }
+            else if (moneyToBeReturned >= 0.05m)
+            {
+                moneyToBeReturned -= 0.05m;
+                fiveCent += 1;
+            //    GiveChange();
+            }
+            else if (moneyToBeReturned >= 0.02m)
+            {
+                moneyToBeReturned -= 0.02m;
+                twoCent += 1;
+             //   GiveChange();
+            }
+            else if (moneyToBeReturned >= 0.01m)
+            {
+                moneyToBeReturned -= 0.01m;
+                oneCent += 1;
+            //    GiveChange();
             }
 
+            } 
 
+
+            string yourCoints = String.Format(@"You have,
+                {0} x 2€,
+                {1} x 1€,
+                {2} x 0.5,
+                {3} x 0.2,
+                {4} x 0.1,
+                {5} x 0.05,
+                {6} x 0.02,
+                {7} x 0.01",
+               twoEuro,
+               oneEuro,
+               fiftycent,
+               twentyCent,
+               tenCent,
+               fiveCent,
+               twoCent,
+               oneCent
+
+           );
+
+            CustomerBalance = 0;
+            return CointsToBeReturned = yourCoints;
         }
 
 
-        private double _moneyInserted;
+        private string _CointsToBeReturned;
 
-        public double MoneyInserted(double coint)
+        public string CointsToBeReturned
+        {
+            get => _CointsToBeReturned;
+            set
+            {
+                _CointsToBeReturned = value;
+                OnPropertyChanged("CointsToBeReturned");
+            }
+        }
+
+
+        private decimal _moneyInserted;
+
+        public decimal MoneyInserted(decimal coint)
         {
             _moneyInserted = coint;
             return _moneyInserted;
@@ -102,20 +196,20 @@ namespace Kaffemaschine
         /// <summary>
         /// Returns The Price of a selectet drink
         /// </summary>
-        public double  GetPrice(Drink drink)
+        public decimal  GetPrice(Drink drink)
         {
             switch (drink)
             {
                 case Drink.Kaffe:
-                    return PriceToPay = 0.5;
+                    return PriceToPay = 0.5m;
                 case Drink.Kaba:
-                    return PriceToPay = 2;
+                    return PriceToPay = 2m;
                 case Drink.NotBeer:
-                    return PriceToPay = 3;
+                    return PriceToPay = 3m;
                 case Drink.Wasser:
-                    return PriceToPay = 1.33;
+                    return PriceToPay = 1.33m;
                 case Drink.Milch:
-                    return PriceToPay = 0.99;
+                    return PriceToPay = 0.99m;
 
                 default:
                     return 0;
@@ -123,11 +217,11 @@ namespace Kaffemaschine
         }
 
 
-        private double _priceToPay;
+        private decimal _priceToPay;
         /// <summary>
         /// Was der Kunde zahlen muss
         /// </summary>
-        public double PriceToPay {
+        public decimal PriceToPay {
             get => _priceToPay;
             set
             {
@@ -136,11 +230,11 @@ namespace Kaffemaschine
             }
         }
 
-        private double _customerBalance;
+        private decimal _customerBalance;
         /// <summary>
         /// Geld was der Kunde eingeworfen hat.
         /// </summary>
-        public double CustomerBalance
+        public decimal CustomerBalance
         {
             get => _customerBalance;
 
