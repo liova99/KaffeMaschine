@@ -117,7 +117,7 @@
             
             <Image Grid.Row="1" Source="C:\MyDocs\Projects\Kaffemaschine\img\KaffeMaschine.jpg"/>
 
-            <Label Style="{StaticResource Label}" Grid.Row="2" Content=""/>
+            <Label Style="{StaticResource Label}" Grid.Row="2" Content="{Binding MoneyToBeReturned, UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="{}Your Change {0:N}€"  />
 
 
 

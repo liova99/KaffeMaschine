@@ -55,6 +55,13 @@ namespace Kaffemaschine
             return CustomerBalance = 0;
         }
 
+        public decimal ChangeToBeReturned()
+        {
+            return MoneyToBeReturned = _customerBalance - _priceToPay;
+        }
+
+
+
         /// <summary>
         /// How much change will be returned and which coints 
         /// like 
@@ -150,9 +157,22 @@ namespace Kaffemaschine
            );
 
             CustomerBalance = 0;
+            PriceToPay = 0;
             return CointsToBeReturned = yourCoints;
         }
 
+
+        private decimal _moneyToBeReturned;
+
+        public decimal MoneyToBeReturned
+        {
+            get => _moneyToBeReturned;
+            set
+            {
+                _moneyToBeReturned = _customerBalance - _priceToPay;
+                OnPropertyChanged("MoneyToBeReturned");
+            }
+        }
 
         private string _CointsToBeReturned;
 
@@ -201,7 +221,7 @@ namespace Kaffemaschine
             switch (drink)
             {
                 case Drink.Kaffe:
-                    return PriceToPay = 0.5m;
+                    return  PriceToPay = 0.5m;
                 case Drink.Kaba:
                     return PriceToPay = 2m;
                 case Drink.NotBeer:
@@ -226,6 +246,7 @@ namespace Kaffemaschine
             set
             {
                 _priceToPay = value;
+                ChangeToBeReturned();
                 OnPropertyChanged("PriceToPay");
             }
         }
@@ -241,6 +262,7 @@ namespace Kaffemaschine
             set
             {
                 _customerBalance = value;
+                ChangeToBeReturned();
                 OnPropertyChanged("CustomerBalance");
             }
         }
