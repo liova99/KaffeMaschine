@@ -217,7 +217,7 @@ namespace Kaffemaschine
         }
 
 
-        private string _selectedDrink;
+        private string _selectedDrink = "Select A Drink";
         /// <summary>
         /// was gerade ausgewählt ist.
         /// </summary>

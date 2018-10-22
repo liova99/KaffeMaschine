@@ -23,6 +23,9 @@ namespace Kaffemaschine
         public MainWindow()
         {
             InitializeComponent();
+
+            // wMain ist der X:Name unser xaml,
+            // DataContext bindet xaml mit machine
             wMain.DataContext = machine;
         }
 
@@ -47,7 +50,7 @@ namespace Kaffemaschine
 
         private void btnNotBeer_Click(object sender, RoutedEventArgs e)
         {
-            machine.SelectedDrink = "Not a Beer";
+            machine.SelectedDrink = "Not a Beer"; // enums durfen kein Space
             machine.GetPrice(CoffeeMachine.Drink.NotBeer);
         }
 
@@ -126,6 +129,7 @@ namespace Kaffemaschine
                 machine.GiveChange();
                 System.Threading.Thread.Sleep(2000);
                 machine.ShowTheCup(false);
+                machine.SelectedDrink = "Select A Drink";
                 MessageBox.Show(machine.CointsToBeReturned);
 
             }

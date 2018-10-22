@@ -115,7 +115,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Label Style="{StaticResource Label}" Grid.Row="0" Grid.Column="0" Content="{Binding Path=SelectedDrink, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Style="{StaticResource Label}" FontSize="22" Grid.Row="0" Grid.Column="0" Content="{Binding Path=SelectedDrink, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Style="{StaticResource Label}" Grid.Row="0" Grid.Column="1" x:Name="priceLbl" Content="{Binding PriceToPay, UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="{}{0:N}€" />
                 <Label Style="{StaticResource Label}" Grid.Row="1" Grid.Column="0" Content="Balance: "/>
                 <Label Style="{StaticResource Label}" Grid.Row="1" Grid.Column="1" Content="{Binding Path=CustomerBalance, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" ContentStringFormat="{}{0:N}€" />
