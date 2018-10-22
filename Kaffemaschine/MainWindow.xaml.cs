@@ -31,8 +31,8 @@ namespace Kaffemaschine
 
         CoffeeMachine machine = new CoffeeMachine();
 
-        
-        
+
+
 
         private void btnCoffe_Click(object sender, RoutedEventArgs e)
         {
@@ -69,7 +69,7 @@ namespace Kaffemaschine
         private void twoEuro_Click(object sender, RoutedEventArgs e)
         {
             machine.MoneyInserted(2);
-            machine.CustomerBalance =  machine.GetCustomerBalance();
+            machine.CustomerBalance = machine.GetCustomerBalance();
         }
 
         private void oneEuro_Click(object sender, RoutedEventArgs e)
@@ -125,18 +125,18 @@ namespace Kaffemaschine
             if (machine.CustomerBalance >= machine.PriceToPay)
             {
                 machine.ShowTheCup(true);
-                MessageBox.Show("Wait for it");
-                machine.GiveChange();
-                System.Threading.Thread.Sleep(2000);
-                machine.ShowTheCup(false);
-                machine.SelectedDrink = "Select A Drink";
-                MessageBox.Show(machine.CointsToBeReturned);
-
+                // run zu erst GiveChange und dann > alles andere
+                Task.Run(() => machine.GiveChange()).ContinueWith((t) =>
+                {
+                    machine.ShowTheCup(false);
+                    machine.SelectedDrink = "Select A Drink";
+                    MessageBox.Show(machine.CointsToBeReturned);
+                });
             }
             else
             {
                 MessageBox.Show(String.Format("You need {0}€ more Dude! ", machine.PriceToPay - machine.CustomerBalance));
-
+                
             }
         }
     }

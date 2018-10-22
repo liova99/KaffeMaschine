@@ -158,6 +158,7 @@ namespace Kaffemaschine
 
             CustomerBalance = 0;
             PriceToPay = 0;
+            System.Threading.Thread.Sleep(3000);
             return CointsToBeReturned = yourCoints;
         }
 
